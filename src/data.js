@@ -24,7 +24,13 @@ export const projects = [
     stack: ['Python', 'FastAPI', 'n8n', 'Docker', 'Flutter'],
     status: 'Em desenvolvimento',
     accent: 'lime',
-    repo: '', demo: '',
+    repo: '',
+    media: {
+      cover: '',
+      coverAlt: '',
+      gallery: [],
+      demo: '',
+    },
   },
   {
     slug: 'escuta',
@@ -38,7 +44,13 @@ export const projects = [
     stack: ['NestJS', 'Flutter', 'PostgreSQL', 'Prisma', 'LiveKit'],
     status: 'Em desenvolvimento',
     accent: 'violet',
-    repo: '', demo: '',
+    repo: '',
+    media: {
+      cover: '',
+      coverAlt: '',
+      gallery: [],
+      demo: '',
+    },
   },
   {
     slug: 'igreja',
@@ -52,7 +64,13 @@ export const projects = [
     stack: ['NestJS', 'Flutter', 'PostgreSQL', 'Docker'],
     status: 'Em desenvolvimento',
     accent: 'orange',
-    repo: '', demo: '',
+    repo: '',
+    media: {
+      cover: '',
+      coverAlt: '',
+      gallery: [],
+      demo: '',
+    },
   },
 ]
 
