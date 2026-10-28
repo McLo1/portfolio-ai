@@ -1,6 +1,6 @@
 # Portfólio — V1
 
-Portfólio pessoal feito com React, Vite e CSS, preparado para execução local e futura hospedagem em uma VPS com Docker.
+Portfólio pessoal feito com React, Vite e CSS, hospedado via Dokploy e também preparado para execução local com Docker.
 
 ## Requisitos
 
@@ -28,11 +28,12 @@ O build é gerado em `dist/`. Esse diretório é um artefato temporário e não 
 
 ## Editar o conteúdo
 
-Edite [`src/data.js`](src/data.js) para atualizar nome, biografia, projetos, tecnologias, links e e-mail. Os links estão vazios para não inventar contatos ou expor código privado. Revise os textos antes de publicar.
+Edite [`src/data.js`](src/data.js) para atualizar nome, biografia, projetos, tecnologias, links e e-mail. O contato profissional usa `mailto` e o site oferece um botão para copiar o endereço de e-mail. Os projetos são apresentados sem links operacionais para sistemas reais.
 
 - Não há backend nem banco na V1.
 - O conteúdo de cada projeto aparece no cartão e ao clicar no cartão.
-- Não há comunicação externa automática, métricas ou integração com LinkedIn.
+- O contato é iniciado pelo visitante por meio do cliente de e-mail configurado no dispositivo.
+- Não há métricas ou integração com LinkedIn.
 
 ## Executar com Docker
 
@@ -49,7 +50,7 @@ Para parar o contêiner:
 docker compose down
 ```
 
-Em uma VPS, configure o Nginx ou Traefik existente para encaminhar o domínio para `http://127.0.0.1:8088`, com TLS/Let's Encrypt. Se o proxy estiver em outro contêiner, use uma rede Docker compartilhada em vez de `127.0.0.1`.
+Em produção, o projeto é hospedado via Dokploy. A execução local continua vinculada a `127.0.0.1` para evitar exposição desnecessária durante o desenvolvimento.
 
 Não interrompa nem substitua contêineres existentes do n8n.
 
