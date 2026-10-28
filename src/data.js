@@ -8,7 +8,7 @@ export const profile = {
   description: 'Desenvolvo backends, aplicações, APIs, integrações e automações para transformar ideias em produtos digitais funcionais. Uso inteligência artificial aplicada ao desenvolvimento para explorar soluções, aprender e acelerar cada etapa do processo.',
   github: 'https://github.com/McLo1',
   linkedin: '', // adicionar URL pública real
-  email: '' // adicionar e-mail profissional
+  email: 'marcelo.conceicao1718@gmail.com'
 }
 
 export const projects = [
