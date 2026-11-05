@@ -4,6 +4,20 @@ import { ArrowUpRight, Github, Linkedin, Menu, X, Code2, Workflow, Layers3, Exte
 import { profile, projects, skills } from './data'
 import './style.css'
 
+function trapModalFocus(event){
+  if(event.key!=='Tab')return
+  const modal=document.querySelector('.modal[aria-modal="true"]')
+  if(!modal)return
+  const focusable=[...modal.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')]
+  if(!focusable.length){event.preventDefault();modal.focus();return}
+  const first=focusable[0]
+  const last=focusable[focusable.length-1]
+  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+  if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+}
+
+document.addEventListener('keydown',trapModalFocus)
+
 function Logo(){return <a href="#inicio" className="logo" aria-label="Voltar ao início"><span className="logo-mark">M<span className="logo-dot">.</span></span><span className="logo-word">PORTFOLIO<span className="logo-slash"> / </span>2026</span></a>}
 function Header(){const [menu,setMenu]=useState(false); return <header className="header"><div className="container header-inner"><Logo/><nav id="main-nav" className={menu?'nav is-open':'nav'} aria-label="Navegação principal"><a href="#projetos" onClick={()=>setMenu(false)}>Projetos</a><a href="#sobre" onClick={()=>setMenu(false)}>Sobre mim</a><a href="#stack" onClick={()=>setMenu(false)}>Tecnologias</a><a href="#contato" className="nav-cta" onClick={()=>setMenu(false)}>Contato <ArrowUpRight size={15}/></a></nav><button type="button" className="menu-btn" onClick={()=>setMenu(v=>!v)} aria-label={menu?'Fechar menu':'Abrir menu'} aria-expanded={menu} aria-controls="main-nav">{menu?<X/>:<Menu/>}</button></div></header>}
 function Hero(){return <section id="inicio" className="hero"><div className="hero-glow"/><div className="container hero-inner"><div className="eyebrow"><span className="pulse"/> BACKEND · APLICAÇÕES · APIs · AUTOMAÇÕES · IA</div><div className="hero-title-wrap"><h1>Ideias em código.<br/><span>Impacto no mundo.</span></h1><div className="hero-orbit" aria-hidden="true"><span className="orbit-cross">✳</span></div></div><div className="hero-bottom"><p>{profile.description}</p><a className="primary-btn" href="#projetos">Explorar projetos <ArrowUpRight size={18}/></a></div><div className="hero-footer"><span><MapPin size={14}/>{profile.location}</span><span>SCROLL PARA EXPLORAR <span className="scroll-indicator-arrow" aria-hidden="true">↓</span></span></div></div></section>}
