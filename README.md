@@ -1,6 +1,36 @@
-# Portfólio — V1
+# Portfólio de Marcelo Silva
 
-Portfólio pessoal feito com React, Vite e CSS, hospedado via Dokploy e também preparado para execução local com Docker.
+Desenvolvo APIs, integrações e aplicações em Salvador, Bahia. Este portfólio reúne projetos em desenvolvimento e mostra as decisões técnicas por trás de cada um. O site é uma aplicação React com Vite, servida por Nginx no deploy em contêiner.
+
+## Projetos apresentados
+
+| Projeto | Problema | Implementação e estágio |
+| --- | --- | --- |
+| RevGás | Organizar os dados de pedidos recebidos pelo WhatsApp e integrá-los ao ERP de uma revenda de gás. | Fluxos no n8n e API em Python com FastAPI. O aplicativo Flutter para entregadores está em desenvolvimento. |
+| Escuta | Reunir a descoberta de terapeutas, o agendamento e o acesso à sessão em um aplicativo. | Flutter, NestJS, Prisma e PostgreSQL. A integração de videochamadas com LiveKit foi validada em testes. |
+| Gestão de Comunidade | Centralizar o acesso e organizar informações de uma comunidade. | Aplicativo Flutter em desenvolvimento, com foco inicial em autenticação e organização dos dados. |
+
+Os textos e o estágio de cada projeto ficam em [src/data.js](src/data.js). Os cartões, a navegação e a apresentação dos detalhes estão em [src/main.jsx](src/main.jsx).
+
+## Como a IA participa de um pedido no RevGás
+
+Imagine a mensagem **“Quero dois P13 e vou pagar no Pix.”** Na etapa de coleta, o modelo interpreta a mensagem e propõe os campos do pedido. O backend valida essa saída. Com os dados do exemplo, o resultado da validação é:
+
+```json
+{
+  "intencao": "INFORMAR",
+  "dados_atualizados": {
+    "produto": "P13",
+    "quantidade": 2,
+    "pagamento": "pix",
+    "endereco": {}
+  }
+}
+```
+
+O endereço ficou vazio porque a pessoa ainda não o informou. O backend verifica o que falta, consulta o preço no ERP e controla a confirmação antes do envio do pedido. Se a extração incluir um campo de preço ou de status, a validação rejeita a saída.
+
+O exemplo usa uma mensagem fictícia e uma resposta simulada do modelo. O resultado acima foi conferido com o mesmo esquema Pydantic usado na aplicação.
 
 ## Requisitos
 
