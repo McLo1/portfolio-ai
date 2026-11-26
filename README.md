@@ -12,6 +12,26 @@ Desenvolvo APIs, integrações e aplicações em Salvador, Bahia. Este portfóli
 
 Os textos e o estágio de cada projeto ficam em [src/data.js](src/data.js). Os cartões, a navegação e a apresentação dos detalhes estão em [src/main.jsx](src/main.jsx).
 
+## Como a IA participa de um pedido no RevGás
+
+Imagine a mensagem **“Quero dois P13 e vou pagar no Pix.”** Na etapa de coleta, o modelo interpreta a mensagem e propõe os campos do pedido. O backend valida essa saída. Com os dados do exemplo, o resultado da validação é:
+
+```json
+{
+  "intencao": "INFORMAR",
+  "dados_atualizados": {
+    "produto": "P13",
+    "quantidade": 2,
+    "pagamento": "pix",
+    "endereco": {}
+  }
+}
+```
+
+O endereço ficou vazio porque a pessoa ainda não o informou. O backend verifica o que falta, consulta o preço no ERP e controla a confirmação antes do envio do pedido. Se a extração incluir um campo de preço ou de status, a validação rejeita a saída.
+
+O exemplo usa uma mensagem fictícia e uma resposta simulada do modelo. O resultado acima foi conferido com o mesmo esquema Pydantic usado na aplicação.
+
 ## Requisitos
 
 - Node.js 20 ou superior

@@ -20,7 +20,7 @@ export const projects = [
     subtitle: 'Atendimento e operações conectados.',
     summary: 'Atendimento automatizado por WhatsApp, com backend em Python/FastAPI e integração com API de ERP.',
     challenge: 'Conectar atendimento, coleta estruturada de informações e processos operacionais em uma experiência mais simples.',
-    solution: 'Backend em Python/FastAPI integrado à API de ERP, com fluxos orquestrados no n8n e execução com Docker. Um aplicativo Flutter para entregadores está em desenvolvimento; o projeto segue em desenvolvimento e validação.',
+    solution: 'Quando alguém escreve “Quero dois P13 e vou pagar no Pix”, o modelo extrai o produto, a quantidade e a forma de pagamento. A API em FastAPI valida os campos, consulta o preço no ERP e controla a confirmação do pedido. O n8n conecta o atendimento ao backend. O aplicativo Flutter para entregadores está em desenvolvimento.',
     stack: ['Python', 'FastAPI', 'n8n', 'Docker', 'Flutter'],
     status: 'Em desenvolvimento',
     accent: 'lime',
