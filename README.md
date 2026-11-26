@@ -1,6 +1,16 @@
-# Portfólio — V1
+# Portfólio de Marcelo Silva
 
-Portfólio pessoal feito com React, Vite e CSS, hospedado via Dokploy e também preparado para execução local com Docker.
+Desenvolvo APIs, integrações e aplicações em Salvador, Bahia. Este portfólio reúne projetos em desenvolvimento e mostra as decisões técnicas por trás de cada um. O site é uma aplicação React com Vite, servida por Nginx no deploy em contêiner.
+
+## Projetos apresentados
+
+| Projeto | Problema | Implementação e estágio |
+| --- | --- | --- |
+| RevGás | Organizar os dados de pedidos recebidos pelo WhatsApp e integrá-los ao ERP de uma revenda de gás. | Fluxos no n8n e API em Python com FastAPI. O aplicativo Flutter para entregadores está em desenvolvimento. |
+| Escuta | Reunir a descoberta de terapeutas, o agendamento e o acesso à sessão em um aplicativo. | Flutter, NestJS, Prisma e PostgreSQL. A integração de videochamadas com LiveKit foi validada em testes. |
+| Gestão de Comunidade | Centralizar o acesso e organizar informações de uma comunidade. | Aplicativo Flutter em desenvolvimento, com foco inicial em autenticação e organização dos dados. |
+
+Os textos e o estágio de cada projeto ficam em [src/data.js](src/data.js). Os cartões, a navegação e a apresentação dos detalhes estão em [src/main.jsx](src/main.jsx).
 
 ## Requisitos
 
